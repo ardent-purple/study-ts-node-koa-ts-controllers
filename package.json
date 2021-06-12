@@ -1,0 +1,32 @@
+{
+  "name": "study-koa-ts-controllers",
+  "version": "1.0.0",
+  "description": "koa controllers",
+  "main": "index.js",
+  "scripts": {
+    "distribute": "yarn build-ts && node dist/server.js",
+    "develop": "concurrently -i -k -p \"[{name}]\" -n \"Node,TypeScript\" -c \"yellow.bold,cyan.bold\" \"yarn watch-js\" \"yarn watch-ts\"",
+    "build-ts": "tsc --skipLibCheck",
+    "watch-ts": "tsc -w --skipLibCheck",
+    "watch-js": "nodemon dist/index.js",
+    "test": "yarn jest --forceExit"
+  },
+  "keywords": [
+    "koa"
+  ],
+  "author": "me",
+  "license": "ISC",
+  "dependencies": {
+    "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.0.0",
+    "koa-ts-controllers": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.1",
+    "@types/node": "^15.3.1",
+    "concurrently": "^6.1.0"
+  }
+}
